@@ -28,3 +28,24 @@ cmake .. && make
 
 - 使用 shared_ptr、weak_ptr 管理指针，防止内存泄漏；
 
+
+## 5、性能测试
+### 测试工具
+- [WebBench](https://github.com/EZLippi/WebBench)
+
+### 测试用例
+#### 
+4 个工作线程并以守护进程运行(./webserver -t 4 -p 8000)
+
+页面大小: 541 bytes/page
+
+wenbench设置: 1000客户端、连接60s、短连接、HTTP1.1（`./webbench -t 60 -c 1000 -2 --get http://localhost:8000/`）
+
+空闲时线程CPU占用情况：
+![](https://cdn.jsdelivr.net/gh/Kevinnan-teen/CDN/image-20210817102938869.png)
+
+测试时线程CPU占用:
+![](https://cdn.jsdelivr.net/gh/Kevinnan-teen/CDN/image-20210817103008711.png)
+
+测试结果：
+![](https://cdn.jsdelivr.net/gh/Kevinnan-teen/CDN/image-20210817102718587.png)
