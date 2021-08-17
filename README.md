@@ -13,6 +13,7 @@
 ## 3、使用方法
 ```
 mkdir build
+cd build
 cmake .. && make
 ./webserver [-p port] [-t thread_numbers]  [-r website_root_path] [-d daemon_run]
 ```
